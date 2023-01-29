@@ -7,12 +7,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .todos{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .todo_div{
+            display: flex;
+            align-items: center;
+        }
+    </style>
 </head>
 <body class="body p-2">
     <input class="input" type="text" id="input">
-    <button class="create bg-success " style="color: white; border: 1px solid;">Create</button>
+    <button class="create bg-success p-2" style="color: white; border: 1px solid;">Create</button>
 
-    <div  class="todos d-flex flex-column g-2">
+    <div  class="todos">
         
     </div>
 

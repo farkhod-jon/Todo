@@ -4,36 +4,64 @@ const myTodos = document.querySelector('.todos');
 
 btn.onclick = (() => {
     let val = input.value;
-    Todos(val);
-    if(val === '' && val){
-        input.style.borderColor = 'red';
+    input.style.borderColor = 'black';
+    if(!val){
+        input.style.borderColor = 'red';    
+    }else{
+        if(isTodoEqual(val)){
+            alert('Bunaqa Todo mavjud!');
+        }else{
+            Todos(val);
+            input.value = '';
+        }
     }
-    input.value = '';
-
+    
+    
+    
+    
+    
 })
 
 
 const Todos = ((val) => {
-    const myTodo = document.createElement('div')
-    const removeButton = document.createElement('button') 
-    myTodo.innerHTML = val; 
-    myTodo.style.display = 'block';
-    myTodos.append(myTodo);
-    myTodos.append(removeButton);
-    myTodos.style.display = 'flex';
-    myTodos.style.direction = 'column';
+    const myTodoText = document.createElement('p');
+    const singleTodo = document.createElement('div')
+    const removeButton = document.createElement('button');
+    myTodoText.innerText = val;
+    singleTodo.append(myTodoText);
+    singleTodo.append(removeButton);
+    singleTodo.classList.add('todo_div');
+    myTodos.append(singleTodo);
     removeButton.innerHTML = 'Delete';
     removeButton.style.backgroundColor = 'red';
     removeButton.style.color = 'white';
     removeButton.style.border = 'red';
-;
+    removeButton.style.padding = '10px';
+    myTodoText.style.paddingTop = '15px';
+    myTodoText.style.marginRight = '10px';
 
     removeButton.onclick = (() => {
-        myTodo.remove('');
+        singleTodo.remove('');
         removeButton.remove('');
     })
-    
 })
+
+function isTodoEqual(val) {
+    const todoText = document.querySelectorAll('.todo_div p');
+  
+    let result = false;
+
+    if(todoText && todoText.length){
+        todoText.forEach((e) => {
+            if(e.innerHTML == val){
+                result = true;
+            }
+        })
+    }
+
+    return result;
+    
+}
 
 
 
