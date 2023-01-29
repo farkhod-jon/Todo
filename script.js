@@ -10,6 +10,7 @@ btn.onclick = (() => {
     }else{
         if(isTodoEqual(val)){
             alert('Bunaqa Todo mavjud!');
+            input.value = '';
         }else{
             Todos(val);
             input.value = '';
