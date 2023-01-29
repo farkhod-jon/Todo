@@ -18,7 +18,6 @@ const Todos = ((val) => {
     const removeButton = document.createElement('button') 
     myTodo.innerHTML = val; 
     myTodo.style.display = 'block';
-    myTodo.style.direction = 'row';
     myTodos.append(myTodo);
     myTodos.append(removeButton);
     myTodos.style.display = 'flex';
