@@ -6,16 +6,14 @@ const deleteImage = document.querySelector('#deleteImage');
 createBtn.onclick = (() => {
     let val = input.value;
     
-    if(input.value === ''){
-        input.style.borderColor = 'red';
-        alert('Input bosh!');
-    }else{
-        if(isEqualTodo == singleTodo.innerHTML){
+    if(input.value != ''){
             TodoAdd(val);
             input.value = '';
             input.style.borderColor = 'black';   
-        }
-    };
+    }else{
+        input.style.borderColor = 'red';
+        alert('Input bosh!');
+    }
 });
 
 function TodoAdd(val) {
