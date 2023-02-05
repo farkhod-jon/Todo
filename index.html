@@ -14,30 +14,74 @@
             box-sizing: border-box;
         }
 
-        .input{
-            width: 80%;
-            height: 40px;
+        body{
+            width: 100%;
+            height: 100vh;
+            padding: 15px;
+        }
+
+        .todo{
+            justify-content: space-between;
+            background-color: gray;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin:  10px 0 0 0;
+            padding: 0 0 0 10px;
+        }
+
+        .deleteBtn{
+            padding: 10px;
+            border: 1px solid red;
+            color: white;
+            background-color: red;
+            font-size: 20px;
+        }
+
+        .text{
+            margin: 0;
+            padding: 0;
+            color: white;
+            font-size: 20px;
         }
 
         .todos{
-            display: flex;
-            flex-direction: column;
+            padding-top: 60px;
+        }
+        
+        #input{
+            width: calc(80% + 160px);
+            height: 40px;
+            margin-right: 5px;
         }
 
-        .todo_div{
-            display: flex;
-            align-items: center;
+        #createBtn{
+            padding: 4px 10px 6px 10px;
+            color: white;
+            font-size: 20px;
+            background-color: rgb(40, 207, 40);
+            border: none;
+        }
+
+        .active{
+            background-color: lightseagreen;
+        }
+
+        #deleteImage{
+            width: 50px;
+            height: 50px;
+            display: none;
         }
     </style>
+    <body>
+        <div style="display: flex; align-items: center;">
+            <input type="text" id="input">
+            <button id="createBtn">Create</button><span>
+             <img src="./assets/delete.png" id="deleteImage" alt=""></span>
+        </div>
+    
+        <div class="todos"></div>
+        <script src="/script.js"></script>
+    </body>
 </head>
-<body class="body p-2">
-    <input class="input" type="text" id="input">
-    <button class="create bg-success p-2" style="color: white; border: 1px solid;">Create</button>
-
-    <div  class="todos">
-        
-    </div>
-
-    <script src="/script.js"></script>
-</body>
 </html>
